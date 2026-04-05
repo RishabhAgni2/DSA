@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int mirrorFrequency(string s) {
+        vector<int> freq(128,0);
+        for(char c:s){
+            freq[c]++;
+        }
+        int ans = 0;
+        for(char c='a';c<='z';c++){
+            char m = 'z'-(c-'a');
+            ans += abs(freq[c]-freq[m]);
+        }
+        for(char c='0';c<='9';c++){
+            char m = '9'-(c-'0');
+            ans += abs(freq[c]-freq[m]);
+        }
+        return ans/2;
+    }
+};
