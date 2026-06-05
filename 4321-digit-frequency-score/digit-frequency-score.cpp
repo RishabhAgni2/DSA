@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int digitFrequencyScore(int n) {
+        int cnt =0;
+        while(n!=0){
+            cnt +=(n%10);
+            n /=10;
+        }
+        return cnt;
+    }
+};
